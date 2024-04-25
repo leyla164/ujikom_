@@ -103,7 +103,6 @@
                               <input
                                   class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-indigo-500 focus:border-indigo-500 focus:shadow"
                                   type="checkbox" id="remember-me"
-                                  style="background-image: url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e&quot;)"
                                   checked />
                               <label class="inline-block" for="remember-me"> ℜ𝔢𝔪𝔢𝔪𝔟𝔢𝔯 𝔐𝔢 </label>
                           </div>

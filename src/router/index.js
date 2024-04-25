@@ -31,7 +31,7 @@ const routes = [
         component: Ulasan,
     },
     {
-        path: "/cart",
+        path: "/admin",
         name: "Cart",
         component: Cart,
     },
@@ -51,7 +51,7 @@ const routes = [
         component: Brands,
     },
     {
-        path: "/categories",
+        path: "/produk1",
         name: "Categories",
         component: Categories,
     },
@@ -72,7 +72,7 @@ const routes = [
         meta: { requiresGuest: true ,}
     },
     {
-        path:"/order/:orderCode",
+        path:"/order",
         name: "PageOrder",
         component: PageOrder,
         props: true,
@@ -92,17 +92,5 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-
-function cekToken(to, from, next) {
-    var isAuthenticated = false;
-    if (localStorage.getItem("token")) isAuthenticated = true;
-    else isAuthenticated = false;
-    if (isAuthenticated) {
-      next();
-    } else {
-      next("/login");
-    }
-  }
-
 
 export default router;

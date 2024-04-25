@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
         <div class="mb-4">
             <label for="">Donatur</label>
@@ -20,4 +20,4 @@ export default {
         }
     }
 }
-</script>
+</script> -->

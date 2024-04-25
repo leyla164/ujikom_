@@ -1,131 +1,255 @@
 <template>
-    <div class="flex min-h-screen w-screen w-full items-center justify-center text-gray-600 bg-gray-50">
-        <div class="relative mt-8">
+    <br><center>
+    <div class="form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+                    <div class="form-container">
+                        <div class="left-content">
+                            <h3 class="title">Site Name</h3>
+                            <h4 class="sub-title">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="right-content">
+                            <h3 class="form-title">Login</h3>
+                            <form class="form-horizontal" @submit.prevent="performLogin">
+                                <div class="form-group"> 
+                                    <label>Username</label><br>
+                                    <input v-model="name" type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label><br>
+                                    <input v-model="password" type="password" class="form-control" required>
 
-            <div class="hidden sm:block h-56 w-56 text-indigo-300 absolute a-z-10 -left-20 -top-20">
-                <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
-                    <defs>
-                        <pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40'
-                            patternTransform='scale(0.6) rotate(0)'>
-                            <rect x='0' y='0' width='100%' height='100%' fill='none' />
-                            <path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5' stroke-width='1' stroke='none'
-                                fill='currentColor' />
-                        </pattern>
-                    </defs>
-                    <rect width='800%' height='800%' transform='translate(0,0)' fill='url(#a)' />
-                </svg>
-            </div>
-            <div class="hidden sm:block h-28 w-28 text-indigo-300 absolute a-z-10 -right-20 -bottom-20">
-                <svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
-                    <defs>
-                        <pattern id='b' patternUnits='userSpaceOnUse' width='40' height='40'
-                            patternTransform='scale(0.5) rotate(0)'>
-                            <rect x='0' y='0' width='100%' height='100%' fill='none' />
-                            <path d='M11 6a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5' stroke-width='1' stroke='none'
-                                fill='currentColor' />
-                        </pattern>
-                    </defs>
-                    <rect width='800%' height='800%' transform='translate(0,0)' fill='url(#b)' />
-                </svg>
-            </div>
-            <!-- Register -->
-            <div class="relative flex flex-col sm:w-[30rem] rounded-lg border-gray-400 bg-white shadow-lg px-4">
-                <div class="flex-auto p-6">
-                    <!-- Logo -->
-                    <div class="mb-10 flex flex-shrink-0 flex-grow-0 items-center justify-center overflow-hidden">
-                        <a href="#"
-                            class="flex cursor-pointer items-center gap-2 text-indigo-500 no-underline hover:text-indigo-500">
-                            <span
-                                class="flex-shrink-0 text-3xl font-black lowercase tracking-tight opacity-100">Login</span>
-                        </a>
+                                </div>
+                                <button class="btn signin">Login</button>
+                                
+                                <a href="" class="forgot">Forgot Password</a>
+                            </form>
+                        </div>
                     </div>
-                    <!-- /Logo -->
-                    <h4 class="mb-2 font-medium text-gray-700 xl:text-xl">Welcome to KCStore!</h4>
-                    <p class="mb-6 text-gray-500">Please sign-in to access your account</p>
-
-                    <form id="" class="mb-4" @submit.prevent="performLogin">
-                        <div class="mb-4">
-                            <label for="email" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Email
-                                or Username</label>
-                            <input type="text"
-                                class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
-                                id="email" v-model="email" placeholder="Enter your email or username" autofocus="" />
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between">
-                                <label class="mb-2 inline-block text-xs font-medium uppercase text-gray-700"
-                                    for="password">Password</label>
-                                <a href="auth-forgot-password-basic.html"
-                                    class="cursor-pointer text-indigo-500 no-underline hover:text-indigo-500">
-                                    <small class=" ">Forgot Password?</small>
-                                </a>
-                            </div>
-                            <div class="relative flex w-full flex-wrap items-stretch">
-                                <input type="password" id="password"
-                                    class="relative block flex-auto cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
-                                    v-model="password" placeholder="············" />
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="block">
-                                <!-- <input
-                                    class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-indigo-500 focus:border-indigo-500 focus:shadow"
-                                    type="checkbox" id="remember-me"
-                                    style="background-image: url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e&quot"
-                                    checked />
-                                <label class="inline-block" for="remember-me"> Remember Me </label> -->
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <button
-                                class="grid w-full cursor-pointer select-none rounded-md border border-indigo-500 bg-indigo-500 py-2 px-5 text-center align-middle text-sm text-white shadow hover:border-indigo-600 hover:bg-indigo-600 hover:text-white focus:border-indigo-600 focus:bg-indigo-600 focus:text-white focus:shadow-none"
-                                type="submit">Sign in</button>
-                        </div>
-                    </form>
-
-                    <p class="mb-4 text-center">
-                        New on kcstore?
-                        <a href="/register" class="cursor-pointer text-indigo-500 no-underline hover:text-indigo-500">Register</a>
-                    </p>
                 </div>
             </div>
-            <!-- /Register -->
         </div>
     </div>
-</template>
-
-<script>
-import { mapActions, mapGetters } from 'vuex';
-
-export default {
+    </center>
+  </template>
+  <script>
+  import { mapActions } from 'vuex';
+  export default {
     data() {
         return {
-            email: '',
+            name: '',
             password: '',
         };
-    },
-    computed: {
-        ...mapGetters('auth',['loginError', 'isAuthenticated']),
     },
     methods: {
         ...mapActions('auth', ['login']),
         async performLogin() {
-            const credentials = {
-                email: this.email,
-                password: this.password,
-            };
-            const success = await this.login(credentials);
-            if (success && this.isAuthenticated) {
+            try {
+                const credentials = {
+                    name: this.name,
+                    password: this.password,
+                };
+                await this.$store.dispatch('auth/login', credentials);
                 // Redirect to the desired route on successful login
                 this.$router.push('/');
-            } else {
-                if(this.loginError){
-                    alert(this.loginError)
-                } else{
+            } catch (error) {
+                console.error(error);
+                // Handle login error here
                 alert("Login Failed");
-                }
             }
         },
     },
-};
-</script>
+  };
+  </script>
+<style>
+.form-container{
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0;
+    box-shadow: 0 0 25px -15px rgba(0,0,0,0.3);
+}
+.form-container .left-content{
+    background-color: #2E323B;
+    font-family: 'Oswald', sans-serif;
+    width: 40%;
+    padding: 66px 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.form-container .left-content .title{
+    color: #FF97A8;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 55px;
+}
+.form-container .left-content .sub-title{
+    color: #fff;
+    font-size: 60px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0;
+}
+.form-container .right-content{
+    text-align: center;
+    width: 60%;
+    padding: 30px 50px;
+    display: inline-block;
+}
+.form-container .right-content .form-title{
+    color: #888;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0 0 2px;
+    margin: 0 0 30px;
+    border-bottom: 2px solid #FF97A8;
+}
+.form-container .right-content .form-horizontal {
+    color: #999;
+    font-size: 14px;
+    text-align: left;
+    margin: 0 0 15px;
+}
+.form-container .form-horizontal .form-group{ margin: 0 0 20px; }
+.form-container .form-horizontal .form-group:nth-of-type(2){ margin-bottom: 35px; }
+.form-container .form-horizontal .form-group label{ font-weight: 500; }
+.form-container .form-horizontal .form-control{
+    color: #888;
+    background: #f9f9f9;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+}
+.form-container .form-horizontal .form-control:focus{ box-shadow: 0 0 5px #FF97A8; }
+.form-container .form-horizontal .signin{
+    color: #fff;
+    background: linear-gradient(to right, #FF638E, #FF97A8);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 9px 11px;
+    margin: 0 0 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+.form-container .form-horizontal .btn:hover,
+.form-container .form-horizontal .btn:focus{
+    box-shadow: 0 0 10px #FF97A8;
+    outline: none;
+}
+.form-container .form-horizontal .remember-me{
+    width: calc(100% - 105px);
+    display: inline-block;
+}
+.form-container .form-horizontal .remember-me .check-label{
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+    vertical-align: top;
+    display: inline-block;
+}
+.form-container .form-horizontal .remember-me .checkbox{
+    height: 17px;
+    width: 17px;
+    min-height: auto;
+    margin: 0 1px 0 0;
+    border: 2px solid #FF97A8;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.3s ease 0s;
+}
+.form-container .form-horizontal .remember-me .checkbox:before{
+    content: '';
+    height: 5px;
+    width: 10px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 2px;
+    top: 2.5px;
+    transition: all 0.3s ease;
+}
+.form-container .form-horizontal .remember-me .checkbox:checked{ background-color: #FF97A8; }
+.form-container .form-horizontal .remember-me .checkbox:checked:before{ opacity: 1; }
+.form-container .form-horizontal .remember-me .checkbox:not(:checked):before{ opacity: 0; }
+.form-container .form-horizontal .remember-me .checkbox:focus{ outline: none; }
+.form-container .form-horizontal .forgot{
+    color: #999;
+    font-size: 12px;
+    text-align: right;
+    width: 100px;
+    vertical-align: top;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.form-container .form-horizontal .forgot:hover{ text-decoration: underline; }
+.form-container .right-content .separator{
+    color: #999;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 15px;
+    display: block;
+}
+.form-container .right-content .social-links{
+    text-align: center;
+    padding: 0;
+    margin: 0 0 25px;
+    list-style: none;
+}
+.form-container .right-content .social-links li{
+    margin: 0 2px 5px;
+    display: inline-block;
+}
+.form-container .right-content .social-links li a{
+    color: #fff;
+    background-color: #F16262;
+    font-size: 12px;
+    padding: 9px 12px;
+    border-radius: 5px;
+    display: block;
+    transition: all 0.3s ease 0s;
+}
+.form-container .right-content .social-links li:nth-child(2) a{ background-color: #3B5897; }
+.form-container .right-content .social-links li a i{ margin-right: 10px; }
+.form-container .right-content .social-links li a:hover{ box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+.form-container .right-content .signup-link{
+    color: #999;
+    font-size: 13px;
+}
+.form-container .right-content .signup-link a{
+    color: #F16262;
+    transition: all 0.3s ease 0s;
+}
+.form-container .right-content .signup-link a:hover{ text-decoration: underline; }
+@media only screen and (max-width:767px){
+    .form-container .left-content,
+    .form-container .right-content{
+        width: 100%;
+        padding: 30px;
+    }
+    .form-container .left-content .title{ margin: 0 0 20px; }
+    .form-container .left-content .sub-title{ font-size: 40px; }
+}
+/* Your existing styles */
+.error {
+    color: red;
+}
+
+</style>

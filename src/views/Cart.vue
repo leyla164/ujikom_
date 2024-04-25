@@ -1,120 +1,73 @@
 <template>
-  <section class="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">
-<div class="mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-center">
-    <h1 class="text-2xl font-semibold text-gray-900">Your Cart</h1>
-  </div>
+  <br>
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/5 bg-gray-200">
+  <ul class="p-4">
+    <li class="mb-4">
+      <a href="#" class="block text-gray-600 hover:text-black">Dashboard</a>
+    </li>
+    <li class="mb-4">
+      <a href="#" class="block text-gray-600 hover:text-black">Carnival</a>
+    </li>
+    <li class="mb-4">
+      <a href="#" class="block text-gray-600 hover:text-black">Analytics</a>
+    </li>
+    <!-- <li class="mb-4">
+      <a href="#" class="block text-gray-600 hover:text-black">Revenue</a>
+    </li> -->
+    <li class="mb-8">
+      <a href="#" class="block text-gray-600 hover:text-black">Support Tickets</a>
+    </li>
+  </ul>
+  <!-- Move Logout to the bottom with more margin -->
+  <ul class="p-4 mt-auto">
+    <li class="mt-60">
+      <a href="/login" class="block text-gray-600 hover:text-black">Logout</a>
+    </li>
+  </ul>
+</div>
 
-  <div class="mx-auto mt-8 max-w-2xl md:mt-12">
-    <div class="bg-white shadow">
-      <div class="px-4 py-6 sm:px-8 sm:py-10">
-        <div class="flow-root">
-          <ul class="-my-8">
-            <li v-for="cart in getCart" :key="cart.cart_id" class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
-              <div class="shrink-0">
-                <img class="h-24 w-24 max-w-full rounded-lg object-cover" src="../assets/img/123.jpg" alt="" />
-              </div>
-
-              <div class="relative flex flex-1 flex-col justify-between">
-                <div class="sm:col-gap-5 sm:grid sm:grid-cols-2">
-                  <div class="pr-8 sm:pr-5">
-                    <p class="text-base font-semibold text-gray-900">{{ cart.name }}</p>
-                    <p class="mx-0 mt-1 mb-0 text-sm text-gray-400">300 g</p>
-                  </div>
-
-                  <div class="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">
-                    <p class="shrink-0 w-20 text-base font-semibold text-gray-900 sm:order-2 sm:ml-8 sm:text-right">Rp.{{cart.regular_price * cart.qty}}</p>
-
-                    <div class="sm:order-1">
-                      <div class="mx-auto flex h-8 items-stretch text-gray-600">
-                        <button @click="changeQty({ cartId: cart.cart_id, typeQty: 'minus'})" class="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">-</button>
-                        <div class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">{{ cart.qty }}</div>
-                        <button @click="changeQty({ cartId: cart.cart_id, typeQty: 'plus'})" class="flex items-center justify-center rounded-r-md bg-gray-200 px-4 transition hover:bg-black hover:text-white">+</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="absolute top-0 right-0 flex sm:bottom-0 sm:top-auto">
-                  <button type="button" @click="removeItem(cart.cart_id)" class="flex rounded p-2 text-center text-gray-500 transition-all duration-200 ease-in-out focus:shadow hover:text-gray-900">
-                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" class=""></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-          </li>
-          </ul>
-          </div>
-
-
-        <div class="mt-6 border-t border-b py-2">
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-400">Subtotal</p>
-            <p class="text-lg font-semibold text-gray-900">$399.00</p>
-          </div>
-          <div class="flex items-center justify-between">
-            <p class="text-sm text-gray-400">Shipping</p>
-            <p class="text-lg font-semibold text-gray-900">$8.00</p>
-          </div>
-        </div>
-        <div class="mt-6 flex items-center justify-between">
-          <p class="text-sm font-medium text-gray-900">Total</p>
-          <p class="text-2xl font-semibold text-gray-900"><span class="text-xs font-normal text-gray-400">USD</span> {{ totalHarga }}</p>
-        </div>
-
-        <div class="mt-6 text-center">
-          <a href="/checkout" button type="button" class="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
-            Checkout
-            <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:ml-8 ml-4 h-6 w-6 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    <!-- Content -->
+    <div class="flex-1 bg-gray-100 p-12">
+      <div class="grid grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="border border-gray-200 bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center justify-center h-16 w-16 bg-gradient-to-tr from-gray-700 to-gray-400 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-          </a>
+          </div>
+          <p class="text-right text-sm font-light mb-1">Pageviews</p>
+          <h4 class="text-2xl font-semibold tracking-tighter xl:text-2xl mb-2">14,000</h4>
+          <p class="text-xs font-light"><span class="text-green-600 font-bold">+22% </span>vs last month</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="border border-gray-200 bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center justify-center h-16 w-16 bg-gradient-to-tr from-blue-700 to-blue-500 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <p class="text-right text-sm font-light mb-1">Users</p>
+          <h4 class="text-2xl font-semibold tracking-tighter xl:text-2xl mb-2">2,300</h4>
+          <p class="text-xs font-light"><span class="text-green-600 font-bold">+3% </span>vs last month</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="border border-gray-200 bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center justify-center h-16 w-16 bg-gradient-to-tr from-emerald-700 to-emerald-500 rounded-full mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-right text-sm font-light mb-1">Sales</p>
+          <h4 class="text-2xl font-semibold tracking-tighter xl:text-2xl mb-2">$5,360</h4>
+          <p class="text-xs font-light"><span class="text-red-600 font-bold">-3% </span>vs last month</p>
         </div>
       </div>
     </div>
   </div>
-</div>
-</section>
-
 </template>
-
-<script>
-import { mapActions, mapGetters } from 'vuex';
-import cart from '../store/modules/cart';
-
-export default {
-  computed: {
-    ...mapGetters('cart', ['getCart']),
-    totalHarga() {
-      this.total = this.getCart.reduce((acc, product) => {
-        return acc + parseFloat(product.regular_price * product.qty );
-      }, 0);
-      return this.total.toFixed(2);
-    },
-  },
-  methods: {
-    ...mapActions('cart', ['fetchCart']),
-    ...mapActions('product', ['fetchProducts']),
-    ...mapActions('product', ['addToCart']),
-
-      // remove product from cart
-      removeItem(cartId, typeQty){
-      this.$store.dispatch('cart/removeFromCart', cartId);
-    },
-
-      // remove product from cart
-      changeQty(cartId, typeQty){
-      this.$store.dispatch('cart/changeQuantityCart', cartId,typeQty);
-    }
-
-  },
-  beforeMount() {
-    this.fetchProducts();
-    this.fetchCart();
-  }, 
-  mounted() {
-    this.fetchCart();
-  },
-}
-</script>

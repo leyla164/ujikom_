@@ -1,5 +1,4 @@
 <template>
-<br><br><br>
 <div class="mx-auto my-10 w-screen max-w-screen-xl px-4">
   <div class="flex rounded-xl bg-white py-2 px-2 text-gray-700 shadow-lg shadow-pink-200">
     <div class="my-auto mr-4 p-3 text-blue-500">
@@ -36,7 +35,7 @@
     <div class="mx-auto grid max-w-screen-lg grid-cols-1 gap-5 p-5 sm:grid-cols-2 md:grid-cols-3 lg:gap-10">
     
     <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
-      <a href="produk" class="block h-full w-full">
+      <a href="order" class="block h-full w-full">
         <img class="max-h-40 w-full object-cover" alt="featured image" src="../assets/img/sephora.jpg" />
         <div class="w-full bg-white p-4">
           <p class="mb-2 text-xl font-medium text-gray-800">Sunscreen</p>
@@ -46,7 +45,7 @@
     </article>
     
     <article class="h-90 col-span-1 m-auto min-h-full cursor-pointer overflow-hidden rounded-lg pb-2 shadow-lg transition-transform duration-200 hover:translate-y-2">
-      <a href="produk" class="block h-full w-full">
+      <a href="produk1" class="block h-full w-full">
         <img class="max-h-40 w-full object-cover" alt="featured image" src="../assets/img/cc.jpg" />
         <div class="w-full bg-white p-4">
           <p class="mb-2 text-xl font-medium text-gray-800">Moisturizer</p>
@@ -156,6 +155,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- <div class="map">
       <h2>Peta Dengan VueJs dan LeafletJs</h2>
